@@ -153,6 +153,7 @@ LAYOUT ACTIVITY MAIN
 
 - để bắt sự kiện click vào item trên ListFragment ta sử dụng Method __onListItemClick()__
 - trong __CityListFragment__ ta gọi __onListItemClick()__, ta thiết lập logic cho Method này là khi user click vào 1 item sẽ Toast nội dung của item đó
+- __onListItemClick()__ sẽ trả về cho ta __position__ chính là vị trí item mà user click tương ứng với vị trí phần tử có trong data mảng String
 - lưu ý: Toast cần có tham số là Context vì vậy ta sẽ truyền getActivity() vào cho nó
 - __CityListFragment.java__
 ```java
