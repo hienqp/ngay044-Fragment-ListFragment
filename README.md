@@ -151,3 +151,42 @@ LAYOUT ACTIVITY MAIN
 - khi build app ta sẽ được như sau
 <img src="https://github.com/hienqp/ngay044-Fragment-ListFragment/blob/main/Screenshot%202022-09-23%20235512.png">
 
+- để bắt sự kiện click vào item trên ListFragment ta sử dụng Method __onListItemClick()__
+- trong __CityListFragment__ ta gọi __onListItemClick()__, ta thiết lập logic cho Method này là khi user click vào 1 item sẽ Toast nội dung của item đó
+- lưu ý: Toast cần có tham số là Context vì vậy ta sẽ truyền getActivity() vào cho nó
+- __CityListFragment.java__
+```java
+package com.hienqp.listfragment;
+
+import android.app.ListFragment;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
+
+public class CityListFragment extends ListFragment {
+    String[] cityList = {"Hà Nội","Hải Phòng","Nha Trang","Khánh Hòa","Hồ Chí Minh","Cần Thơ"};
+    ArrayAdapter adapter;
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        adapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, cityList);
+        setListAdapter(adapter);
+
+        return inflater.inflate(R.layout.fragment_citylist, container, false);
+    }
+
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        Toast.makeText(getActivity(), cityList[position], Toast.LENGTH_SHORT).show();
+
+        super.onListItemClick(l, v, position, id);
+    }
+}
+```
+- khi user click vào bất kỳ item nào trên CityListFragment ta sẽ được như sau
+<img src="https://github.com/hienqp/ngay044-Fragment-ListFragment/blob/main/Screenshot_20220924_001155.png">
+
