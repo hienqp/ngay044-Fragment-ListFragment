@@ -149,5 +149,5 @@ LAYOUT ACTIVITY MAIN
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
 - khi build app ta sẽ được như sau
-![alt](src="https://github.com/hienqp/ngay044-Fragment-ListFragment/blob/main/Screenshot%202022-09-23%20235512.png")
+<img src="https://github.com/hienqp/ngay044-Fragment-ListFragment/blob/main/Screenshot%202022-09-23%20235512.png">
 
